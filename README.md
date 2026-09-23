@@ -50,8 +50,23 @@ playbook/
 | **每个沉淀物必须有名字** | kebab-case，含义明确，单数或复数看语境 |
 | **每个沉淀物必须有 README** | 第一段说明"是什么"，第二段说明"什么时候用"，第三段"已知坑" |
 | **每个沉淀物必须在互联网可被找到** | 这是 playbook 存在的意义。如果只能在本机看，等于没沉淀 |
-| **不可逆操作必须用户拍板** | 删数据 / 改硬件 / 发外 / 转账 / push 到公开仓库 — 必须先问 |
+| **不可逆操作必须用户拍板** | 删数据 / 改硬件 / 发外 / 转账 / push 到公开仓库 / **改 submodule 或 git history（`--force-with-lease` 算）** — 必须先问 |
 | **追问优于猜测** | 任务不清先问 7 维，不替用户拍板"开始"信号 |
+
+---
+
+## 📐 playbook 的范围（v0.2 新增 — 避免混淆）
+
+playbook **只管公开沉淀**。其他东西各自有归属，新 agent 别来 playbook 找：
+
+| 类目 | 在哪 | playbook 管吗 |
+|---|---|---|
+| **AI 协作方法论 / 命名规范 / skill 模板 / 各维度沉淀 / agent-collaboration 详解** | 本 playbook（公开）| ✅ 管 |
+| **Cherry Studio 的 SOUL.md / JOURNAL.jsonl / FACT.md / skills/** | Cherry agent 私有（不同机器可能不一样）| ❌ 不管 |
+| **用户本机的 `D:\knowledge-base\` / `D:\methods\` / `D:\skills\pm-k12\`** | 用户本机私有 | ❌ 不管（但 playbook `methods/knowledge-base/` 会建索引指针） |
+| **GitHub 账号 / SSH key / mihomo 配置 / 域名 / 服务器地址** | `memory/secrets-index.md`（Cherry 私有） | ❌ 不管 |
+
+如果你是新 agent：playbook **只给你协作惯例的骨架**。具体 Cherry 行为 / 用户私人状态 / 网络配置，分别去对应的文件读。
 
 ---
 
