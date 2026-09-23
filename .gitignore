@@ -36,6 +36,9 @@ htmlcov/
 .cherrystudio/
 .cache/
 
+# 私有 SOUL 快照 — 不能公开（仅本机恢复用）
+methods/ai-collab/SOUL-snapshots/
+
 # Local worktrees / submodule scratch
 *.bak-*
 *~

@@ -131,9 +131,55 @@ AI 自主判断 = 训练分布 + prompt 上下文 + 临时启发式。**有偏**
 | H | 安全底线 | 读 .env ✅；输出 token ❌ |
 | I | 沟通调参 | 精简度 7.5-8；杂度 3-3.5；隐藏模板化标签 |
 | J | 信息冗余削减 | 高频信息 → 索引；下次不再问 |
-| K | 同库新模块先抄旧修复 | 不重新踩已记录的坑 |
+| K | 同库新模块前必跑 pre-edit-check | 不跑别动笔；记录不等于复用必须有触发器 |
 
 完整内容在 Cherry Studio 的 SOUL.md。**新启动的 agent 不一定能读到 SOUL.md**——所以本文件存在意义是"互联网可被找到"。
+
+---
+
+## 10. 观点 K 升级（v0.3 — 2026-09-23）
+
+### 原措辞（v0.1, 2026-09-14）
+
+> 在同一代码库里写同类新模块之前，先搜旧模块的已知修复（FACT.md 已知未修 / JOURNAL ## [error]），把坑当对照清单逐条核一遍，而不是重新踩一遍。
+>
+> **反例**：rooms.py agent turn 没抄 main.py /api/chat 的 finalize pass → 群里没结论。
+
+### 升级原因
+
+K 写了 8 天，但**触发率仅 ~1/3**（实测）：
+- anchor 引号匹配 3+ 次没拦住
+- edit_safety "边写边验" 误报 OK 3 次没拦住
+- Python bytes literal 中文 4 次没拦住
+
+**靠 AI 自觉不可靠 → 升级为硬触发 + 配套工程化**。
+
+### 升级版（v0.3）
+
+**硬规则**：在同一代码库里**新增模块 / 页面 / 调度器 / 大文件（>500 行）多处替换**之前，必须先跑 pre-edit-check 检索同类坑，**不跑别动笔**。
+
+**触发场景**：
+- `write_file` 创建新文件
+- `edit_file` 改动 ≥500 字节
+- `edit_file` 内容含 `class / def / import`
+
+**副标题保留**（"记录不等于复用"作为诊断词）：
+> 写新模块前必须主动搜旧模块的已知修复，把坑当对照清单逐条核一遍，而不是重新踩一遍。
+> **记录不等于复用——必须有触发器，否则沉淀 = 摆设**。
+
+### Cherry 自动钩子（软触发）
+
+Cherry Studio 不支持工具层硬钩子 → 通过 SKILL `auto-pre-edit-check` 实现软触发：
+- 路径：`C:\Users\Cryin\AppData\Roaming\CherryStudio\Data\Skills\auto-pre-edit-check\SKILL.md`
+- 触发：AI 加载 skill 后**自觉**在触发场景前停下跑 pre-edit-check
+- 双锁：SOUL 观点 K 升级硬规则 + SKILL 软钩子
+
+### 配套资产
+
+- 工具：`memory/scripts/pre_edit_check.py`
+- 手册：`memory/anti-patterns.md`（30 条上限）
+- Cherry SKILL：`Data\Skills\auto-pre-edit-check\SKILL.md`
+- Cherry SOUL 私有版：观点 K v2
 
 ---
 

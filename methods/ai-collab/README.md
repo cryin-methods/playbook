@@ -15,6 +15,7 @@
 | 2 | **追问优于猜测** | 任务不清时扫 7 维（目标/背景/受众/风格/验收/雷区/决策偏好） |
 | 3 | **不可逆操作必须用户拍板** | 删数据 / 改硬件 / 发外 / 转账 / push 到公开仓库 |
 | 4 | **沉淀必须落到位置** | 经验→SOUL/FACT/JOURNAL/skill；不写 = 丢 |
+| 5 | **新模块前必跑 pre-edit-check** | 详见 [docs/agent-collaboration.md §10](../../docs/agent-collaboration.md) — K 段升级（v0.3） |
 
 ## 追问 7 维模板
 
@@ -44,8 +45,10 @@
 
 - [`docs/agent-collaboration.md`](../../docs/agent-collaboration.md) — 完整协作惯例
 - [Cherry SOUL.md 11 观点](file:///) — 当前 SOUL 已在 Cherry agent 内部
+- K 段升级详见 [`docs/agent-collaboration.md §10`](../../docs/agent-collaboration.md)
 - [`methods/behavior-routine/`](../behavior-routine/) — 行为纪律（不可逆等规则的源头）
 
 ## 版本
 
+- v0.3 (2026-09-23) — K 段升级（详见 [docs/agent-collaboration.md §10](../../docs/agent-collaboration.md)）
 - v0.1 (init) — 2026-09-23 起

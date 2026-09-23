@@ -74,7 +74,7 @@ playbook **只管公开沉淀**。其他东西各自有归属，新 agent 别来
 
 | 维度 | 内容 |
 |---|---|
-| 当前版本 | v0.1 (init) |
+| 当前版本 | v0.3 (K 升级 + Cherry 自动钩子) |
 | 仓库地址 | https://github.com/cryin-methods/playbook |
 | 本地路径 | `D:\methods\playbook` |
 | 首次 push | 2026-09-23 |

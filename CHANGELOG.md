@@ -2,6 +2,22 @@
 
 按 [NAMING.md](../NAMING.md) 规范：v0.1 init 起记。
 
+## v0.3 (2026-09-23) — K 段升级 + Cherry 自动钩子
+
+**核心变更**：观点 K 从「同库新模块先抄旧修复」（v0.1 软规则）升级为「同库新模块前必跑 pre-edit-check」（v0.3 硬触发）
+
+**新增：**
+- `docs/agent-collaboration.md` §10 — 观点 K 升级详解（v0.1 原措辞 / 升级原因 / 升级版 / Cherry 软钩子 / 配套资产）
+- `docs/agent-collaboration.md` §9 表格 K 行升级
+- `.gitignore` 加 `methods/ai-collab/SOUL-snapshots/`（私有备份，不能公开）
+
+**升级原因：**
+K 自 2026-09-14 写以来 8 天，触发率仅 ~1/3（实测：anchor 引号 3+ 次、edit_safety 误报 3 次、bytes literal 中文 4 次都没拦住）。**靠 AI 自觉不可靠 → 必须升级为硬触发 + 工程化钩子**。
+
+**Cherry 侧配套（不在公开范围）：**
+- SOUL.md 观点 K v2（私有）
+- Cherry SKILL `auto-pre-edit-check`
+
 ## v0.2 (2026-09-23) — gap 补 + 真实 smoke test
 
 **新增：**
