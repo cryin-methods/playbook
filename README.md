@@ -27,7 +27,10 @@
 playbook/
 ├── README.md                  ← 你正在看
 ├── NAMING.md                  ← 命名规范
+├── CHANGELOG.md               ← 版本变更
 ├── skill-template/            ← 创建新 skill 的最少必要结构（蒸馏自 pm-k12）
+│   ├── SKILL.md
+│   └── README.md
 ├── methods/                   ← 各维度方法论
 │   ├── ai-collab/             ← AI 协作方法论（追问 / 角色互换 / 不可逆 / 沉淀触发）
 │   ├── prompt-workflow/       ← prompt 工作流（v4 沉淀 + 后续版本）
@@ -57,9 +60,9 @@ playbook/
 | 维度 | 内容 |
 |---|---|
 | 当前版本 | v0.1 (init) |
-| 首次 push 日期 | 见 [git log](https://github.com/cryin-methods/playbook/commits/main) |
 | 仓库地址 | https://github.com/cryin-methods/playbook |
 | 本地路径 | `D:\methods\playbook` |
+| 首次 push | 2026-09-23 |
 | 命名致敬 | pm-k12 是这套范式的活样板 |
 
 ---
@@ -73,5 +76,5 @@ playbook/
 3. 复制 [`skill-template/`](./skill-template/) 或该维度的 sibling 目录作为起点
 4. 写完三段：是什么 / 什么时候用 / 已知坑
 5. 在本 README 的"目录"段更新路径
-7. 跑 `tests/` 里的 smoke test
-8. commit + push（公开 push 前最后看一眼）
+6. 跑 `tests/` 里的 smoke test
+7. commit + push（公开 push 前最后看一眼）
